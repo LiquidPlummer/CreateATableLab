@@ -1,7 +1,6 @@
-package com.revature.DO_NOT_TOUCH;
+package com.revature.CREATE_TABLE_LAB;
 
-import com.revature.DO_NOT_TOUCH.Util.ConnectionUtil;
-import junit.framework.TestCase;
+import com.revature.CREATE_TABLE_LAB.Util.ConnectionUtil;
 import org.junit.After;
 import org.junit.Test;
 
@@ -11,7 +10,7 @@ import java.sql.SQLException;
 
 import static org.junit.Assert.fail;
 
-public class CreateATableTest{
+public class CreateATableTest {
     private CreateATable createATable = new CreateATable();
 
     /**
@@ -55,7 +54,7 @@ public class CreateATableTest{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Problem 1: Table not created properly. Check names and data types.");
             fail();
         }
 
@@ -82,7 +81,7 @@ public class CreateATableTest{
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Problem 2: Table not created properly. Check names and data types.");
             fail();
         }
 
@@ -102,7 +101,7 @@ public class CreateATableTest{
             PreparedStatement ps = connection.prepareStatement(sql + sql2);
 
             ps.executeUpdate();
-            System.out.println("UNIQUE constraint not added to 'title' column");
+            System.out.println("Problem 2: UNIQUE constraint not added to 'title' column");
             fail();
 
         } catch (SQLException e) {
@@ -123,7 +122,7 @@ public class CreateATableTest{
             PreparedStatement ps = connection.prepareStatement(sql);
 
             ps.executeUpdate();
-            System.out.println("NOT NULL constraint not added to 'title' column");
+            System.out.println("Problem 2: NOT NULL constraint not added to 'title' column");
             fail();
 
         } catch (SQLException e) {
@@ -144,7 +143,7 @@ public class CreateATableTest{
             PreparedStatement ps = connection.prepareStatement(sql);
 
             ps.executeUpdate();
-            System.out.println("NOT NULL constraint was not added to 'artist' column");
+            System.out.println("Problem 2: NOT NULL constraint was not added to 'artist' column");
             fail();
 
         } catch (SQLException e) {

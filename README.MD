@@ -1,3 +1,6 @@
+## Update: Offloaded the utils from this project into another to be served as a JAR dependency: [CreateATableLabUtils](https://github.com/LiquidPlummer/CreateATableLabUtils).  
+It would be great to also offload the unit tests, but I haven't been able to make that work yet. Should be doable.
+
 ## Background
 As of right now, all of the data that we are storing into variables in java are lost when the application ends. We need a tool that will 
 allow us to persist data permanently. This tool is called a database.
